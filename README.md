@@ -1,6 +1,2 @@
 # teageto.github.io
- Portafolio incompleto.
-
-Saludos,
- 
-teageto
+Portafolio incompleto.
