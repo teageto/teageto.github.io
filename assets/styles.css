@@ -10,24 +10,31 @@
     src: url('/assets/fonts/Lato-Bold.ttf') format('woff');
 }
 
-html, body{
+html, body, main, header, footer{
     font-family: 'Lato-Regular', sans-serif;
     background-color: #181C38;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    margin: 0;
     height: 100%;
 }
 
-.navbar {
-    background-color: #222642;
+#max-width {
+    max-width: 70%;
+    margin: 0 auto;
 }
 
-.welcome {
-    padding-left: 200px;
+.header {
+    max-width: 70%;
+    margin: 0 auto;
     color: #9698A8;
-    font-size: 100px;
+    font-size: 130px;
     padding-top: 100px;
+    margin-bottom: 80px;
 }
 
-@keyframes moveLeftRight {
+@keyframes moveRight {
     0% {
       transform: translateX(0);
     }
@@ -38,9 +45,7 @@ html, body{
 
 .titles {
     font-family: 'Lato-Bold', sans-serif;
-    animation: moveLeftRight 0.5s ease forwards;
-    animation-play-state: paused;
-    width: 320px;
+    animation: moveRight 0.5s ease forwards;
 }
 
 .titles:hover {
@@ -49,17 +54,87 @@ html, body{
 }
 
 .titles:not(:hover) {
-    animation: normal;
+    animation: none;
 }
 
 .t-1 {
     color: whitesmoke;
 }
 
+.t-1::before {
+    content: 'Hello.';
+}
+
+.t-1:hover::before {
+    content: 'About';
+}
+
+.t-2::before {
+    content: 'I am';
+}
+
+.t-2:hover::before {
+    content: 'Work';
+}
+
+.t-3::before {
+    transition: visibility 0.3s ease;
+    visibility: visible;
+    content: 'Thiago';
+}
+
+.t-3:hover::before {
+    content: 'Contact'
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(10px)
+    }
+}
+
+.arrowDown {
+    font-size: 50px;
+    justify-content: center;
+    display: flex;
+}
+
+.onlyArrow {
+    animation: moveUp 0.5s ease forwards;
+    color: #9698A8;
+}
+
+.onlyArrow:hover {
+    animation-play-state: running;
+    color: #535775;
+}
+
+.onlyArrow:not(:hover) {
+    animation: normal;
+}
+
 @media only screen and (max-width: 600px) {
-    .welcome {
-        padding-left: 60px;
+    .header {
         padding-top: 80px;
         font-size: 70px;
+        padding-bottom: 150px;
+    }
+
+    .arrowDown {
+        font-size: 60px;
+    }
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 601px) {
+    .card {
+        width: 80%;
     }
 }
