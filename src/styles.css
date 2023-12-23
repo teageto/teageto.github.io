@@ -1,0 +1,64 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+@font-face {
+    font-family: 'Lato-Regular'; 
+    src: url('/src/fonts/Lato-Regular.ttf') format('woff'); 
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('/src/fonts/Lato-Bold.ttf') format('woff');
+}
+
+html, body{
+    font-family: 'Lato-Regular', sans-serif;
+    background-color: #181C38;
+    height: 100%;
+}
+
+.navbar {
+    background-color: #222642;
+}
+
+.welcome {
+    padding-left: 200px;
+    color: #9698A8;
+    font-size: 100px;
+    padding-top: 100px;
+}
+
+@keyframes moveLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50px);
+    }
+}
+
+.titles {
+    font-family: 'Lato-Bold', sans-serif;
+    animation: moveLeftRight 1s ease forwards;
+    animation-play-state: paused;
+}
+
+.titles:hover {
+    color: #535775;
+    animation-play-state: running;
+}
+
+.titles:not(:hover) {
+    animation: normal;
+}
+
+.t-1 {
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome {
+        padding-left: 60px;
+        padding-top: 80px;
+        font-size: 70px;
+    }
+}
