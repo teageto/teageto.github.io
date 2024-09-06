@@ -1,0 +1,11 @@
+{
+  "name": "portfolio.teageto",
+  "version": "1.0.0",
+  "description": "Portfolio of Thiago Mena",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "author": "Thiago Mena",
+  "license": "ISC"
+}
