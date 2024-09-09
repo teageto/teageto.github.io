@@ -4,8 +4,13 @@
   "description": "Portfolio of Thiago Mena",
   "main": "index.js",
   "scripts": {
-    "test": "dev"
+    "start": "npm run build && npm run dev && npm run open",
+    "open": "concurrently \"http-server -a localhost -p 3030\" \"open http://localhost:3030/\""
   },
   "author": "Thiago Mena",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "http-server": "^14.1.1"
+  }
 }
